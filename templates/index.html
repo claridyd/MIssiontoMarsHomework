@@ -15,6 +15,32 @@
             <h1>Mission to Mars</h1>
             <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>  
         </div>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <h3 class="heading">Latest Mars News</h3>
+                <h4>{{Mars_data.news_title}}</h4>
+                <p>{{Mars_data.news_p}}</p>
+                <br>
+                <h3 class="heading">Featured Mars Image</h3>
+                <a href="{{Mars_data.featured_image}}">
+                    <img src="{{Mars_data.featured_image}}" width=900px>
+                </a>
+            </div>
+            <br>
+            <div class="col-lg-4">
+                <div class="card-body">
+                    <h3 class="card-title">Current Mars Weather</h3>
+                    <p class="card=text">
+                        {{Mars_data.mars_weather}}
+                    </p>
+                </div>
+                
+            </div>
+
+
+
+        </div>
 
 
 

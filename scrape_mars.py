@@ -45,6 +45,9 @@ def scrape():
     fact_table = pd.read_html(facts_url)
     fact_df = fact_table[1]
     fact_df.columns = ['Metric', 'Measurement']
+    fact_html = fact_df.tohtml()
+    fact_html = fact_html.replace('\n', '')
+
 
     hemisphere_image_urls = [
     {"title": "Cereberus Hemisphere", "img_url": "https://astrogeology.usgs.gov/cache/images/cfa62af2557222a02478f1fcd781d445_cerberus_enhanced.tif_full.jpg"},
