@@ -6,8 +6,8 @@ import urllib.request
 import requests
 
 def init_browser():
-    executable_path = {'executable_path': 'c:\DataVisual\chromedriver.exe'}
-    return Browser('chrome', **executable_path, headless=False)
+    executable_path = {"executable_path": "c:/DataVisual/chromedriver.exe"}
+    return Browser("chrome", **executable_path, headless=False)
 
 def scrape():
     browser = init_browser()
@@ -19,6 +19,7 @@ def scrape():
 
     # Get news title 
     news_title = soup.find(class_='article_title').text.strip()
+    print(news_title)
 
     # Get paragraph texts
     news_p = soup.body.find('p').text
@@ -66,4 +67,4 @@ def scrape():
     browser.quit()
 
     # Return results
-    return mars_info
+    return Mars_data
