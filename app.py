@@ -18,12 +18,12 @@ def index():
 
 @app.route("/scrape")
 def scrape():
-    mars = mongo.db.mars
+    # mars = mongo.db.mars
     # Run the scrape function
     Mars_scrape = scrape_mars.scrape()
 
     # Update Mongo database 
-    mars.update({}, Mars_scrape, upsert=True)
+    mongo.db.mars.update({}, Mars_scrape, upsert=True)
 
     # Redirect back to home page
     return redirect("/")

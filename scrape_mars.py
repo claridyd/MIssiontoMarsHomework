@@ -11,6 +11,8 @@ def init_browser():
 
 def scrape():
     browser = init_browser()
+    # Setup dictionary
+    #Mars_data ={}
 
     # specify NASA Mars site url
     url = "https://mars.nasa.gov/news/8503/robotic-toolkit-added-to-nasas-mars-2020-rover"
@@ -19,10 +21,12 @@ def scrape():
 
     # Get news title 
     news_title = soup.find(class_='article_title').text.strip()
-    print(news_title)
+    # print(news_title)
+    #Mars_data["news_title"] = news_title
 
     # Get paragraph texts
     news_p = soup.body.find('p').text
+    #Mars_data["news_p"] = news_p
 
     # Get url for JPL Mars Space image
     featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA19952_hires.jpg'
@@ -45,7 +49,7 @@ def scrape():
     fact_table = pd.read_html(facts_url)
     fact_df = fact_table[1]
     fact_df.columns = ['Metric', 'Measurement']
-    fact_html = fact_df.tohtml()
+    fact_html = fact_df.to_html()
     fact_html = fact_html.replace('\n', '')
 
 
@@ -62,7 +66,7 @@ def scrape():
         "news_p": news_p,
         "featured_image": featured_image_url,
         "mars_weather": mars_weather,
-        "mars_facts": fact_df,
+        "mars_facts": fact_html,
         "hemisphere_image": hemisphere_image_urls
     }
 
@@ -71,3 +75,5 @@ def scrape():
 
     # Return results
     return Mars_data
+    
+

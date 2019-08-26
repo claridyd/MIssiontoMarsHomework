@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mission to Mars</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -18,13 +18,13 @@
         
         <div class="row">
             <div class="col-lg-8">
-                <h3 class="heading">Latest Mars News</h3>
-                <h4>{{Mars_data.news_title}}</h4>
-                <p>{{Mars_data.news_p}}</p>
+                <h3>Latest Mars News</h3>
+                <h4>{{mars_info.news_title}}</h4>
+                <p>{{mars_info.news_p}}</p>
                 <br>
                 <h3 class="heading">Featured Mars Image</h3>
-                <a href="{{Mars_data.featured_image}}">
-                    <img src="{{Mars_data.featured_image}}" width=900px>
+                <a href="{{mars_info.featured_image}}">
+                    <img src="{{mars_info.featured_image}}" width=900px>
                 </a>
             </div>
             <br>
@@ -32,16 +32,37 @@
                 <div class="card-body">
                     <h3 class="card-title">Current Mars Weather</h3>
                     <p class="card=text">
-                        {{Mars_data.mars_weather}}
+                        {{mars_info.mars_weather}}
                     </p>
                 </div>
                 
             </div>
-
-
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3 class="heading">Mars Facts</h3>
+            {{mars_info.mars_facts}}
 
         </div>
-
+        <br>
+        <h3 class="heading text-center">Mars Hemispheres</h3>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="card" style="width: 40 rem;">
+                    <a href="{{mars_info.hemisphere_image[0]}}">
+                        <img class="card-img-top" src="{{mars_info.hemisphere_image[0]}}" width=400px >
+                    </a>
+                    </div> 
+                </div>
+            </div>
+            <div class="col-lg-3">
+                    <div class="card" style="width: 40 rem;">
+                    <a href="{{mars_info.hemisphere_image[1]}}">
+                        <img class="card-img-top" src="{{mars_info.hemisphere_image[1]}}" width=400px >
+                    </a>
+                    </div> 
+                </div>
 
 
 
